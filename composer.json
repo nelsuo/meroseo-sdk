@@ -1,0 +1,20 @@
+{
+    "name": "meroseo/sdk",
+    "description": "Sdk to interact with the meroseo application",
+    "type": "library",
+    "require": {
+        "laminas/laminas-http": "^2.15"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Meroseo\\Sdk\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Nelson Teixeira"
+        }
+    ],
+    "minimum-stability": "stable"
+}
