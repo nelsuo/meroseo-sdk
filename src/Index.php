@@ -1,11 +1,11 @@
 <?php 
 
-namespace meroseo\Sdk;
+namespace Meroseo\Sdk;
 
 class Index
 {
     public function greet($greet = "Hello World")
     {
-        return $greet;
+        return 'Oppppa... ' . $greet;
     }
 }
