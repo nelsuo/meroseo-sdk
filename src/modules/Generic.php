@@ -21,6 +21,8 @@ abstract class Generic {
 
 	private function request($method, $url, $parameters, $options) {
 
+		$options = array_merge(['headers' => []], $options);
+
 		$client = new Client();
 		$client->setUri($this->endpoint . $url);
 		
@@ -31,8 +33,6 @@ abstract class Generic {
 			[ 'access_token' => $this->accessToken ]
 		);
 
-		print_r($parameters);
-
 		switch ($method) {
 			case static::METHOD_GET:
 				$client->setParameterGet($parameters);	
@@ -41,6 +41,10 @@ abstract class Generic {
 				$client->setMethod('POST');
 				$client->setParameterPost($parameters);	
 			break;
+		}
+
+		if (!empty($headers)) {
+			$client->setHeaders($options['headers']);
 		}
 
 		$response = $client->send();		
